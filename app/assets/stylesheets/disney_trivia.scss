@@ -1,0 +1,120 @@
+
+.page-content {
+  background-color: #FFFAFA;
+  margin: 0px;
+  padding: 12px;
+  min-height: 400px;
+}
+
+.hide-field {
+  display: none;
+}
+
+.page-header {
+  margin: 0px;
+  background: -moz-linear-gradient(272deg, rgba(0,51,51,1) 0%, rgba(42,216,219,1) 99%, rgba(0,51,51,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,51,51,1)), color-stop(99%, rgba(42,216,219,1)), color-stop(100%, rgba(0,51,51,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(272deg, rgba(0,51,51,1) 0%, rgba(42,216,219,1) 99%, rgba(0,51,51,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(272deg, rgba(0,51,51,1) 0%, rgba(42,216,219,1) 99%, rgba(0,51,51,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(272deg, rgba(0,51,51,1) 0%, rgba(42,216,219,1) 99%, rgba(0,51,51,1) 100%); /* ie10+ */
+  background: linear-gradient(178deg, rgba(0,51,51,1) 0%, rgba(42,216,219,1) 99%, rgba(0,51,51,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003333', endColorstr='#003333',GradientType=0 ); /* ie6-9 */
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.page-footer {
+  background: -moz-linear-gradient(272deg, rgba(0,51,51,1) 0%, rgba(42,216,219,1) 99%, rgba(0,51,51,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,51,51,1)), color-stop(99%, rgba(42,216,219,1)), color-stop(100%, rgba(0,51,51,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(272deg, rgba(0,51,51,1) 0%, rgba(42,216,219,1) 99%, rgba(0,51,51,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(272deg, rgba(0,51,51,1) 0%, rgba(42,216,219,1) 99%, rgba(0,51,51,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(272deg, rgba(0,51,51,1) 0%, rgba(42,216,219,1) 99%, rgba(0,51,51,1) 100%); /* ie10+ */
+  background: linear-gradient(178deg, rgba(0,51,51,1) 0%, rgba(42,216,219,1) 99%, rgba(0,51,51,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003333', endColorstr='#003333',GradientType=0 ); /* ie6-9 */
+  padding: 2em 2em;
+  position: relative;
+  // top: 508px;
+  border: 1px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-family: Tahoma, sans-serif;
+  font-size: 12px;
+  font-size: 0.75em;
+  text-align: center;
+  height: 59px;
+  margin: 0 auto;
+  color: #fff;
+  clear: both;
+}
+
+
+.header-container {
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.header {
+  margin-top: 10px;
+}
+.header-container .header-title {
+  text-align: left;
+  margin-top: 0px;
+}
+
+.header-title .text-line1 {
+  color: white;
+  // color: #1F340F;
+  font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+	font-weight: normal;
+  font-size: 2.00em;
+	letter-spacing: .2em;
+	line-height: 1.1em;
+	margin:0px;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+.header-title .text-line2 {
+  color: white;
+  // color: #1F340F;
+  font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+	font-weight: normal;
+  font-size: .65em;
+	letter-spacing: .2em;
+	line-height: 1.1em;
+	margin:0px;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+.header-container ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header-container li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+.header-container a {
+  color: white;
+}
+
+.header-container a:hover {
+  color: #FFFAFA; //#FFD700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.page-heading {
+  font-weight: normal;
+  font-size: 1.25em;
+}
+
+.btn-transparent {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
