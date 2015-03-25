@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hint: MyString
+  sequence: 1
+  Question_id: 
+
+two:
+  hint: MyString
+  sequence: 1
+  Question_id: 

@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: dev_disney_trivia
+
+test:
+  <<: *default
+  database: test_disney_trivia
+
+production:
+  <<: *default
+  database: prod_disney_trivia
+  url: <%= ENV['DATABASE_URL'] %>
