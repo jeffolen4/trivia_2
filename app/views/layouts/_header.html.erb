@@ -9,6 +9,9 @@
     <ul class="nb-list nb-item">
       <li><%= link_to 'Home', root_path, :class => "nb-item" %></li>
       <li><%= link_to 'Categories', categories_path, :class => "nb-item" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Logout', destroy_user_session_path, :class => "nb-item", :method => "delete" %></li>
+      <% end %>
     </ul>
   </div>
 </div>
