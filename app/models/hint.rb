@@ -1,3 +1,3 @@
 class Hint < ActiveRecord::Base
-  belongs_to :Question
+  belongs_to :question
 end

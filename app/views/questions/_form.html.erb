@@ -1,4 +1,5 @@
-<%= form_for(@question) do |f| %>
+
+<%= form_for setup_question( @category, @question ), :html => { :class => "form-inline", :role => "form" } do |f| %>
   <% if @question.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
@@ -11,7 +12,88 @@
     </div>
   <% end %>
 
+
+  <div class="field form-group">
+    <%= f.label 'Category: ' %>
+    <%= f.select :category_id, options_for_select(@categories, @category.id), {}, { class: "form-control selectWidth" }  %>
+  </div>
+  <div class="field form-group" style="width: 100%">
+    <%= f.label :question %>
+    <%= f.text_area :question, { :class => "form-control", :style => "width: 65%" } %>
+    <%= f.hidden_field :id %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :active %>
+    <%= f.check_box :active, { :class => "form-control" } %>
+  </div>
+
+
+    <h3>Answers</h3>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Answer</th>
+          <th>Correct?</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <%= f.fields_for :answers do |fa| %>
+          <tr>
+            <td class="col-md-11">
+              <div class="field">
+                <%= fa.text_area :answer, { :class => "form-control", :style => "width: 100%", :rows => "1" } %>
+              </div>
+            </td>
+            <td class="col-md-1">
+              <div class="field">
+                <%= fa.check_box :is_correct %>
+              </div>
+            </td>
+            <td>
+              <% if fa.object.persisted? %>
+              <%= link_to category_question_answer_path(@question.category_id, @question.id, fa.object.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-mini" do %>
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+    <h3>Hints</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Hint</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <%= f.fields_for :hints do |fh| %>
+          <tr>
+            <td class="col-md-11">
+              <div class="field">
+              <%= fh.text_area :hint, { :class => "form-control", :style => "width: 100%", :rows => "1" } %>
+            </td>
+            <td>
+              <% if fh.object.persisted? %>
+              <%= link_to category_question_hint_path(@question.category_id, @question.id, fh.object.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-mini" do %>
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

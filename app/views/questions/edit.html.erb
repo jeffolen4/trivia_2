@@ -1,6 +1,10 @@
-<h1>Editing Question</h1>
+<p id="notice"><%= notice %></p>
+
+<h3>Editing Question</h3>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @question %> |
-<%= link_to 'Back', questions_path %>
+<br><br>
+<div class="btn-group">
+  <%= link_to 'Show', category_question_path( @question.category.id, @question.id), class: "btn btn-primary" %>
+  <%= link_to 'Back', category_questions_path(@question.category.id, @question.id), class: "btn btn-primary" %>
+</div>

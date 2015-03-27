@@ -1,4 +1,4 @@
 class Category < ActiveRecord::Base
-  has_many :Questions, dependent: :destroy
+  has_many :questions, dependent: :destroy
 
 end

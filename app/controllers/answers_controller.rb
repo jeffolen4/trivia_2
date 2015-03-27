@@ -56,7 +56,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer.destroy
     respond_to do |format|
-      format.html { redirect_to answers_url, notice: 'Answer was successfully destroyed.' }
+      format.html { redirect_to edit_category_question_path(@answer.question.category.id, @answer.question.id), notice: 'Answer was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Categories</h1>
+<h3>Listing Categories</h3>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Name</th>
       <th>Active</th>
-      <th colspan="3"></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -16,9 +16,15 @@
       <tr>
         <td><%= category.name %></td>
         <td><%= category.active %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="btn-group">
+          <%= link_to edit_category_path(category.id), class: "btn btn-primary btn-mini" do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+          <%= link_to category_path(category.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-mini" do %>
+            <span class="glyphicon glyphicon-remove-circle"></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Category', new_category_path %>
+  <%= link_to 'New Category', new_category_path, role: "button", class: "btn btn-primary" %>
+  <br><br>
+  <%= link_to 'Back', category_questions_path( Category.first["id"] ), role: "button", class: "btn btn-primary" %>

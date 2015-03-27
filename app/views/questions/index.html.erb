@@ -1,20 +1,49 @@
+<div class="row">
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Questions</h1>
+<h3>Listing Questions</h3>
 
-<table>
+<div class="column1 col-md-2">
+  <%= select_tag(:category_id, options_for_select(@categories, @category.id), class: "form-control selectWidth", id: "index-select" ) %>
+</div>
+
+<div class="column2 col-md-10">
+
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Question</th>
+      <th>Active</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="field form-group" style="width: 100%">
+            <%= text_area_tag 'question', question.question, :class => "form-control", :disabled => true %>
+            <%= hidden_field_tag question.id %>
+          </div>
+        </td>
+        <td>
+          <div class="field form-group">
+            <%= check_box_tag question.active, { :class => "form-control" } %>
+          </div>
+        </td>
+        <td>
+          <div class="btn-group">
+            <%= link_to category_question_path(question.category_id, question.id), class: "btn btn-primary btn-mini" do %>
+              <span class="glyphicon glyphicon-eye-open"></span>
+            <% end %>
+            <%= link_to edit_category_question_path(question.category_id, question.id), class: "btn btn-primary btn-mini" do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+            <% end %>
+            <%= link_to category_question_path(question.category_id, question.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-mini" do %>
+              <span class="glyphicon glyphicon-remove-circle"></span>
+            <% end %>
+          </div>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +51,8 @@
 
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'New Question', new_category_question_path(@category), role: "button", class: "btn btn-primary" %>
+<br><br>
+</div>
+
+</div>

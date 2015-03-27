@@ -2,6 +2,13 @@ Rails.application.routes.draw do
 
   root 'questions#index'
 
+  resources :categories do
+    resources :questions do
+      resources :answers
+      resources :hints
+    end
+  end
+
   resources :categories
   resources :questions
   resources :answers

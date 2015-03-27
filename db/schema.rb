@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20150325151900) do
   add_index "hints", ["question_id"], name: "index_hints_on_question_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
-    t.string   "question"
+    t.text     "question"
     t.boolean  "active"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
