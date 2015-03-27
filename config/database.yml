@@ -13,5 +13,5 @@ test:
 
 production:
   <<: *default
-  database: prod_disney_trivia
+  # database: prod_disney_trivia
   url: <%= ENV['DATABASE_URL'] %>
