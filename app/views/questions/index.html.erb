@@ -48,7 +48,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= paginate @questions %>
 <br>
 
 <%= link_to 'New Question', new_category_question_path(@category), role: "button", class: "btn btn-primary" %>

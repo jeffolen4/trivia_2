@@ -1,6 +1,7 @@
 class Question < ActiveRecord::Base
   belongs_to :category
 
+  paginates_per 5
   has_many :answers, dependent: :destroy
   has_many :hints, dependent: :destroy
 

@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
       @category = Category.find(params["category_id"])
     end
     # raise "category: #{@categories.first.inspect}"
-    @questions = Question.includes(:answers, :hints, :category).where("category_id = ?", @category )
+    @questions = Question.includes(:answers, :hints, :category).where("category_id = ?", @category ).page params[:page]
   end
 
   # GET /questions/1
